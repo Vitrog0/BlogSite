@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" href="/styles/styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+<section>
+    <div class="wrapper">
+        <input type="checkbox" id="btn" hidden>
+        <label for="btn" class="menu-btn">
+          <i class="fas fa-bars"></i>
+          <i class="fas fa-times"></i>
+        </label>
+        <nav id="sidebar">
+          <div class="title">Side Menu</div>
+          <ul class="list-items">
+            <li><a href="/"><i class="fas fa-home"></i>Home</a></li>
+            <% for(let i = 0; i < filenames.length; i++) { %>
+                <li><a href="/<%= filenames[i].replace('.ejs', '') %>"><i class="fas fa-file" id="home"></i><%= filenames[i].replace(".ejs", "") %></a></li>
+            <% } %>
+          </ul>
+        </nav>
+      </div>
+</section>
+    <h1>Welcome to Blog</h1>
+<div class="flex-form">
+<div class="form-card"><form action="/submit_url" method="POST">
+    <!-- Text Input -->
+    <h2>Enter your title</h2>
+    <input type="text" id="title" name="title" required></div>
+<div class="form-card"><form action="/submit" method="POST">
+    <h2>Enter the content of your blog</h2>
+    <textarea id="blog" name="blog" rows="4" cols="50" required></textarea>
+</div>
+</div>
+
+
+</body>
+</html>
